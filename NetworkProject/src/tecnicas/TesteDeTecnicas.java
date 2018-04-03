@@ -7,7 +7,7 @@ public class TesteDeTecnicas {
 	public static void main(String[] args) {
 		Paridade p = new Paridade();
 		Hamming h = new Hamming();
-		CheckSum c= new CheckSum();
+		Crc c= new CheckSum();
 		
 		String opcoes = "Selecione técnica de detecção:\n"
 					+ "1 - Paridade.\n"
@@ -26,11 +26,13 @@ public class TesteDeTecnicas {
 				JOptionPane.showMessageDialog(null, p.mensagem + "   <- Bit de paridade", "Resultado", JOptionPane.INFORMATION_MESSAGE);
 				break;
 			case "2":
-				System.out.println("CRC");
+				
+                     System.out.println("CRC");
+                     c.Emissor();
 				break;			
 			case "3":
 				System.out.println("CHECKSUM");
-				c.Emissor();
+				
 				break;
 			case "4":
 				System.out.println("Hamming");
