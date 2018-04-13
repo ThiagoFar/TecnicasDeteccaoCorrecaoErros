@@ -1,4 +1,4 @@
-package tecnicas;
+
 
 import javax.swing.JOptionPane;
 
