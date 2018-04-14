@@ -7,7 +7,7 @@ public class Checksum {
 		//Inicializando a lógica
 		String mensagem="";
 		int repet;
-		String mensagemJP = "Informe a mensagem a ser enviada ou digite pular para informar a mensagem a ser recebida" ;
+		String mensagemJP = "Informe a mensagem a ser enviada:" ;
 		 mensagem= JOptionPane.showInputDialog(mensagemJP);
 		 System.out.println("-------------------Bloco Emissor ------------------\n");
 		 repet= (mensagem.length())/8;

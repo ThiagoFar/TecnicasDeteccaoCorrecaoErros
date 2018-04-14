@@ -5,48 +5,57 @@ public class Crc {
 	
 	
 	public void Emissor(){
-	String divisor = "1101";
-	String mensagem;
-	int dividindo;
-	String mensagemJP = "Informe a mensagem a ser enviada ou digite pular para informar a mensagem a ser recebida" ;
+	String gerador = "1101",bloco,mensagem,resto;
+	String mensagemJP = "Informe a mensagem a ser enviada :" ;
+	int dividendo,divisor;
 	 mensagem= JOptionPane.showInputDialog(mensagemJP);
+	 System.out.println("mensagem: "+ mensagem);
+	bloco=mensagem;
+     //adicionando R zeros ao final da mensagem, R é igual ao grau do gerador
+	 mensagem=mensagem+"000";
 	 
-	if ( (mensagem.equals ("pular")==false)) {
-		
-	 //logica
-	 dividindo = Integer.parseInt(mensagem,2) % Integer.parseInt(divisor,2);
-	 mensagem = mensagem + Integer.toBinaryString(dividindo);
-   
-	 JOptionPane.showMessageDialog(null, "Enviando t(X) = " + mensagem);
+	 //dividindo a mensagem pelo gerador
+	 dividendo= Integer.parseInt(mensagem,2);
+	 divisor=Integer.parseInt(gerador,2);
+	 System.out.println("Dividendo: "+dividendo);
+	 System.out.println("Divisor: "+divisor);
+	 resto= Integer.toBinaryString( dividendo%divisor);
+	 bloco=bloco+resto;
 	 
-	 receptor(mensagem);
+	 System.out.println("Resto: "+resto);
+	 System.out.println("Bloco: "+bloco);
+	 
+	 
+	 receptor(bloco);
 	
 	}
-	}
+	
 	
 	public void receptor(String mensagem) {
 		String divisor = "1101";
 		int dividindo;
 		String resto;
-		String resultado=(mensagem.substring(6, 10));
-		mensagem = mensagem.substring(0,6);
-		System.out.println("resutlado: " +resultado);
-		System.out.println("msg: " +mensagem);
-		if (mensagem.equals ("pular")) {
-			String mensagemJP = "Informe a mensagem a ser recebida" ;
-			 mensagem= JOptionPane.showInputDialog(mensagemJP);
-		}
-		System.out.println("mensagem recebida: "+ mensagem);
+		int resultado;
 		
-		 dividindo = Integer.parseInt(mensagem,2) % Integer.parseInt(divisor,2);
-		 resto=Integer.toBinaryString(dividindo);
-		 System.out.println("resultado da divisão : " + resto);
 		
-		if (resto.equals(resultado)) {
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*if (resto.equals(resultado)) {
 			JOptionPane.showMessageDialog(null, "não houve erros");
 		}else {
 			JOptionPane.showMessageDialog(null, "Houveram erros");
 		}
+		*/
 		
 	}
 }
