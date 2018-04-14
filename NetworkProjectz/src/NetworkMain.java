@@ -7,8 +7,8 @@ public class NetworkMain {
 	public static void main(String[] args) {
 		Paridade p = new Paridade();
 		Hamming h = new Hamming();
-		Crc teste= new Crc();
-		
+		Crc c= new Crc();
+		Checksum v = new Checksum();
 		String opcoes = "Selecione técnica de detecção:\n"
 					+ "1 - Paridade.\n"
 					+ "2 - CRC\n"
@@ -28,11 +28,11 @@ public class NetworkMain {
 			case "2":
 				
                      System.out.println("CRC");
-                     teste.Emissor();
+                     c.Emissor();
 				break;			
 			case "3":
 				System.out.println("CHECKSUM");
-				
+				v.emissor();
 				break;
 			case "4":
 				System.out.println("Hamming");
