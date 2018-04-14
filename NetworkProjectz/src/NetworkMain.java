@@ -35,6 +35,13 @@ public class NetworkMain {
 				v.emissor();
 				break;
 			case "4":
+				String bloco;
+				String mensagemJP = "Digite o bloco a ser recebido: " ;
+				 bloco= JOptionPane.showInputDialog(mensagemJP);
+				 v.receptor(bloco);
+				break;
+				
+			case "5":
 				System.out.println("Hamming");
 				h.iniciaHamming();
 				break;
